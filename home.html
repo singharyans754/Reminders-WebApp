@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reminder Application - Home</title>
+    <style>
+        /* Some basic styles for the page */
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f2f2f2;
+        }
+        
+        h1 {
+          font-size: 32px;
+          margin: 0 0 20px;
+          text-align: center; /* center the heading */
+        }
+        h3 {
+			text-align: center;
+		}
+        .btn-container {
+        text-align: center;
+        }
+  
+        button {
+          background-color: #4CAF50; /* Green */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 10px;
+          cursor: pointer;
+          border-radius: 10px;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+          transition: background-color 0.2s ease;
+        }
+        .back-button {
+			position: absolute;
+			bottom: 10px;
+			left: 10px;
+		}
+
+		.logout-button {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+		}
+
+      </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="welcome-message">Welcome to the Reminder Application</h1>
+  </div>
+
+  <script>
+    // Retrieve the username value from the URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get('username');
+
+    // If the username value is not null, display it next to the welcome message
+    if (username) {
+      const welcomeMessage = document.getElementById('welcome-message');
+      welcomeMessage.innerHTML = `Welcome to the Reminder Application, ${username.charAt(0).toUpperCase()}${username.slice(1)}`;
+    }
+  </script>        
+      </h1>
+      <br>
+      <h3>Today is: <span id="datetime"></span></h3>
+      <script>
+          function updateDateTime() {
+              var dt = new Date();
+              var datetime = dt.toLocaleString();
+              document.getElementById("datetime").textContent = datetime;
+          }
+          // Update the date/time every second
+          setInterval(updateDateTime, 1000);
+      </script>
+      <div class="btn-container">
+        <a href="set.html">
+          <button>Set Reminder</button><br>
+        </a>
+        <a href="http://localhost/modify1.php">
+          <button>Modify Reminder</button><br>
+        </a>
+        <a href="http://localhost/disable1.php">
+          <button>Disable Reminder</button><br>
+        </a>       
+        <a href="http://localhost/delete1.php">
+          <button>Delete Reminder</button><br>
+        </a>      
+        <a href="http://localhost/enable1.php">
+          <button>Enable Reminder</button><br>
+        </a>
+        <a href="http://localhost/view1.php">
+          <button>View your Reminders</button><br>
+        </a>    
+      </div>  
+      </div>
+      <a href="index.html"><button class="button back-button">Back</button></a>
+      <a href="log-out.html"><button class="button logout-button">Log Out</button></a>
+    </body>
+    </html>

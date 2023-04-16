@@ -1,0 +1,129 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="login-box">
+		<h1>Login to Continue</h1>
+		<form action="checklogin.php" method="POST">
+			<label for="username">Username</label>
+        	<input type="text" id="username" name="username" required>
+        	<label for="password">Password</label>
+        	<input type="password" id="password" name="password" required>
+        	<button class="login-btn">Log In</button>
+        	<button class="cancel-btn">Cancel</button>
+		</form>
+	</div>
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <style>
+      body {
+        background-color: #F2F2F2;
+      }
+
+      #login-form {
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        padding: 20px;
+        width: 400px;
+        margin: 0 auto;
+        margin-top: 100px;
+      }
+
+      input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      #login-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      }
+
+      #login-button:hover {
+        background-color: #3e8e41;
+      }
+
+      #cancel-button {
+        background-color: #FF0000;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      }
+
+      #cancel-button:hover {
+        background-color: #b30000;
+      }
+	  h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+  		}
+    </style>
+  </head>
+  <body>
+	<h1>Login to Continue</h1>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+      <button type="button" id="login-button" onclick="login()">Log In</button>
+	  <a href="index.html">
+		<button type="button" id="cancel-button" onclick="cancel()">Cancel</button>
+	  </a>
+      
+    </form>
+
+    <script>
+      function login() {
+        console.log("login() function called");
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if ((username === "admin" && password === "12345") || (username === "aryan" && password === "5101")) {
+          window.location.href = "home.html?username=" + username;
+        } else {
+          window.location.href = "failed.html";
+        }
+      }
+
+      function cancel() {
+        document.getElementById("login-form").reset();
+      }
+    </script>
+  </body>
+</html>
+

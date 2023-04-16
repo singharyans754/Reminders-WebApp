@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Failed</title>
+    <style>
+      body {
+        background-color: #F2F2F2;
+      }
+
+      #failed-message {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 100px;
+      }
+
+      #back-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        margin: 0 auto;
+        font-size: 16px;
+        margin-top: 100px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      }
+
+      #back-button:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="failed-message">Login Failed Retry</div>
+    <button id="back-button" onclick="goBack()">Back to Login</button>
+
+    <script>
+      function goBack() {
+        window.location.href = "login.html";
+      }
+    </script>
+  </body>
+</html>
